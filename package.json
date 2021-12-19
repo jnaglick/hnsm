@@ -1,0 +1,30 @@
+{
+  "name": "hnsm",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "bootstrap": "npm install && lerna bootstrap",
+    "build": "lerna run build",
+    "build:in-container": "lerna run build:in-container",
+    "clean": "lerna run clean",
+    "clean:node_modules": "npx rimraf **/node_modules",
+    "lint": "npx prettier --write . && eslint --fix .",
+    "start:dev": "lerna run start:dev",
+    "test": "jest --config=./jest.config.js --verbose"
+  },
+  "author": "",
+  "license": "NONE",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "27.0.3",
+    "@typescript-eslint/eslint-plugin": "5.3.0",
+    "@typescript-eslint/parser": "5.3.0",
+    "eslint": "8.2.0",
+    "jest": "27.4.4",
+    "lerna": "^4.0.0",
+    "prettier": "2.4.1",
+    "rimraf": "3.0.2",
+    "ts-jest": "27.1.1",
+    "typescript": "4.4.4"
+  }
+}

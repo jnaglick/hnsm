@@ -1,0 +1,29 @@
+{
+  "name": "@hnsm/web-client",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "build": "npm run clean && npm run pack",
+    "build:in-container": "docker-compose run --rm web-client-build",
+    "clean": "rm -rf dist/",
+    "pack": "webpack --mode production",
+    "start:dev": "webpack serve --live-reload --mode development",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "NONE",
+  "dependencies": {
+    "preact": "10.5.15"
+  },
+  "devDependencies": {
+    "@types/jest": "27.0.3",
+    "html-webpack-plugin": "5.4.0",
+    "jest": "27.4.5",
+    "ts-jest": "27.1.2",
+    "ts-loader": "9.2.6",
+    "typescript": "4.4.4",
+    "webpack": "5.59.1",
+    "webpack-cli": "4.9.1",
+    "webpack-dev-server": "4.4.0"
+  }
+}

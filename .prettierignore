@@ -1,0 +1,6 @@
+dist
+cdk.out
+package-lock.json
+*.snap
+*.log
+README.md
