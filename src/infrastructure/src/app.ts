@@ -7,13 +7,20 @@ export interface AppContext {
 }
 
 export class App extends cdk.App {
+  public readonly stacks: cdk.Stack[] = [];
+
   constructor(context: AppContext) {
     super({
       context,
     });
 
-    new WebApiStack(this, "WebApiStack");
-    new WebClientStack(this, "WebClientStack");
+    this.addStack(new WebApiStack(this, "WebApiStack"));
+    
+    this.addStack(new WebClientStack(this, "WebClientStack"));
+  }
+
+  private addStack(stack: cdk.Stack) {
+    this.stacks.push(stack);
   }
 }
 

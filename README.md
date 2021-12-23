@@ -5,21 +5,27 @@
 
 Prereqs:
 
-1. use nvm or the node thats in .nvmrc
+1. Use nvm or the node thats in .nvmrc
 
-To setup:
+2. Create .env.local from example and fill it out:
+
+```
+cp .env.local.example .env.local
+```
+
+3. Install deps:
 
 ```
 npm run bootstrap
 ```
 
-To start in local dev mode:
+4. Finally, start all services in local dev mode:
 
 ```
 npm run start:dev
 ```
 
-NOTE: There's a know issue with this command where you can't see output from the scripts. Navigate to localhost:8080 or localhost:9000 ...
+NOTE: There's a know issue with this command where you can't see output from the scripts. Navigate to localhost:8080 or localhost:9000 to start. (This will be improved)
 
 ## Deployment
 

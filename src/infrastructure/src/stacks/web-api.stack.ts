@@ -9,10 +9,6 @@ import { getStage } from "../app";
 // TODO better solution
 const WEB_API_DIST = path.resolve(__dirname, "../../../web-api/dist");
 
-export interface WebApiStackOptions {
-  lambdaCodeAssetPath: string;
-}
-
 export class WebApiStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string) {
     super(scope, id, {

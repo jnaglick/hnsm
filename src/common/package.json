@@ -4,5 +4,8 @@
   "description": "",
   "scripts": {},
   "author": "",
-  "license": "NONE"
+  "license": "NONE",
+  "dependencies": {
+    "dotenv": "10.0.0"
+  }
 }
