@@ -4,12 +4,12 @@
   "description": "",
   "scripts": {
     "bootstrap": "npm install && lerna bootstrap",
-    "build": "lerna run build",
-    "build:in-container": "lerna run build:in-container",
+    "build": "lerna run build --parallel",
+    "build:in-container": "lerna run build:in-container --parallel",
     "clean": "lerna run clean",
     "clean:node_modules": "npx rimraf **/node_modules",
     "lint": "npx prettier --write . && eslint --fix .",
-    "start:dev": "lerna run start:dev",
+    "start:dev": "lerna run start:dev --parallel",
     "test": "jest --config=./jest.config.js --verbose"
   },
   "author": "",

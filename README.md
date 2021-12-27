@@ -25,8 +25,6 @@ npm run bootstrap
 npm run start:dev
 ```
 
-NOTE: There's a know issue with this command where you can't see output from the scripts. Navigate to localhost:8080 or localhost:9000 to start. (This will be improved)
-
 ## Deployment
 
 Prereqs:
@@ -52,9 +50,8 @@ This will be automated and improved eventually!
 ## Issues
 
 - shared deps (typescript, jest) are duplicated across every package, shouldn't they be shared? ((am i use lerna wrong?))
-- lerna doesnt bind tty, so when running the top-level scripts that use `lerna run ...`, you cant see server output or do shell interaction with the inner npm scripts, which is really painful and makes cdk deploys requiring shell interaction impossible...
 - inf specs fail if no dist/ on local fs. need way to inject/mock this
-- inf spec snapshot is _always_ different for web-client, and (expectedly) different when web-api dist changes. same as above, need way to inject/mock this
+- inf spec snapshot changes when code changes. same as above, need way to inject/mock this
 - need something that unifies build+deploy steps
 
 ## TODO
