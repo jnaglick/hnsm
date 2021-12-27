@@ -49,7 +49,6 @@ This will be automated and improved eventually!
 
 ## Issues
 
-- shared deps (typescript, jest) are duplicated across every package, shouldn't they be shared? ((am i use lerna wrong?))
 - inf specs fail if no dist/ on local fs. need way to inject/mock this
 - inf spec snapshot changes when code changes. same as above, need way to inject/mock this
 - need something that unifies build+deploy steps
@@ -58,4 +57,4 @@ This will be automated and improved eventually!
 
 - use tsconfig-paths (specifically in inf package because it doesnt use webpack)
 - better use of extends in tsconfig. web-client one is mostly a copy+paste of base one
-- unify how dependencies vs devDependencies are listed. (ofc this is just a formality because all deployed code is bundled, and ci/cd needs to build and test...)
+- cant use lerna hoist because some package (i forget which) doesnt respect node_modules recursive lookup (wont fix?)
