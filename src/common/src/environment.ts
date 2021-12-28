@@ -1,5 +1,5 @@
-import * as dotenv from 'dotenv';
-import * as path from 'path';
+import * as dotenv from "dotenv";
+import * as path from "path";
 
 const ENV_LOCAL_PATH = path.resolve(__dirname, "../../../.env.local");
 
@@ -7,8 +7,9 @@ export interface Environment {
   STAGE: "prod" | "dev";
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 function isEnvironment(env: any): env is Environment {
-  if (typeof env !== 'object') {
+  if (typeof env !== "object") {
     return false;
   }
 
@@ -21,7 +22,7 @@ function isEnvironment(env: any): env is Environment {
 
 function loadEnv(): Environment {
   const dotenvConfig = dotenv.config({
-    path: ENV_LOCAL_PATH
+    path: ENV_LOCAL_PATH,
   });
 
   if (dotenvConfig.error) {
@@ -33,12 +34,12 @@ function loadEnv(): Environment {
 
   if (!env) {
     // console.error('Failed to load env: empty');
-    throw 'Failed to load env: empty';
+    throw "Failed to load env: empty";
   }
 
   if (!isEnvironment(env)) {
     // console.error('Failed to load env: typeguard returned false');
-    throw 'Failed to load env: typeguard returned false';
+    throw "Failed to load env: typeguard returned false";
   }
 
   return {
@@ -48,5 +49,5 @@ function loadEnv(): Environment {
 
 let env: Environment | void;
 export function getEnvironment(): Environment {
-  return !!env ? env : env = loadEnv();
+  return env ? env : (env = loadEnv());
 }

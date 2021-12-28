@@ -15,7 +15,7 @@ export class App extends cdk.App {
     });
 
     this.addStack(new WebApiStack(this, "WebApiStack"));
-    
+
     this.addStack(new WebClientStack(this, "WebClientStack"));
   }
 

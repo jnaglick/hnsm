@@ -36,7 +36,9 @@ export class WebClientStack extends cdk.Stack {
     new cloudfront.Distribution(this, "WebClientDistribution", {
       defaultRootObject: "index.html",
       defaultBehavior: {
-        origin: new cloudfrontOrigins.S3Origin(webClientBucket, { originAccessIdentity }),
+        origin: new cloudfrontOrigins.S3Origin(webClientBucket, {
+          originAccessIdentity,
+        }),
       },
     });
   }

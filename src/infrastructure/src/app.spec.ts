@@ -6,11 +6,13 @@ describe("App", () => {
   it("should create stacks", () => {
     // arrange
     const app = new App({
-      STAGE: "test"
+      STAGE: "test",
     });
 
     // act
-    const snapshots = app.stacks.map((stack) => SynthUtils.toCloudFormation(stack));
+    const snapshots = app.stacks.map((stack) =>
+      SynthUtils.toCloudFormation(stack)
+    );
 
     // assert
     expect(snapshots).toMatchSnapshot();

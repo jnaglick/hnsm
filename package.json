@@ -8,7 +8,8 @@
     "build:in-container": "lerna run build:in-container --parallel",
     "clean": "lerna run clean",
     "clean:node_modules": "npx rimraf **/node_modules",
-    "lint": "npx prettier --write . && eslint --fix .",
+    "lint": "npx prettier . && eslint .",
+    "lint:write": "npx prettier --write . && eslint --fix .",
     "start:dev": "lerna run start:dev --parallel",
     "test": "jest --config=./jest.config.js --verbose"
   },
