@@ -24,6 +24,7 @@ jobs:
   init:
     name: Hello!
     runs-on: ubuntu-latest
+    needs: [get-branch-names]
     steps:
       - run: echo base -> "${{ needs.get-branch-names.outputs.base }}"
       - run: echo target -> "${{ needs.get-branch-names.outputs.target }}"
