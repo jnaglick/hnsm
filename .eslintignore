@@ -1,5 +1,9 @@
 dist
 cdk.out
 node_modules
+package-lock.json
+*.snap
+*.log
+README.md
 jest.config.js
 webpack.config.js

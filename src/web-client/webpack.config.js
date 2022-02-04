@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 const clientConfig = {
   entry: "./src/index.tsx",
@@ -12,6 +13,7 @@ const clientConfig = {
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
     modules: [path.resolve("./node_modules"), path.resolve("./src")],
+    plugins: [new TsconfigPathsPlugin()],
   },
 
   module: {

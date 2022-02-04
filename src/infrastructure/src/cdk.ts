@@ -1,7 +1,6 @@
 import { App } from "./app";
 
-// TODO tsconfig-paths ...
-import { getEnvironment } from "../../common/src";
+import { getEnvironment } from "$common/environment";
 
 const env = getEnvironment();
 
