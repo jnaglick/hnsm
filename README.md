@@ -16,7 +16,7 @@ cp .env.local.example .env.local
 3. Install deps in all packages:
 
 ```
-npm run install:all
+npm run bootstrap
 ```
 
 4. Finally, start all services in local dev mode:
