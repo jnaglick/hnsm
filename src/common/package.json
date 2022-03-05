@@ -2,7 +2,10 @@
   "name": "@hnsm/common",
   "version": "0.0.0",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "clean": "rm -rf node_modules/",
+    "install:ci": "npm ci --no-optional"
+  },
   "author": "",
   "license": "NONE",
   "dependencies": {

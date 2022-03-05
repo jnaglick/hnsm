@@ -2,7 +2,7 @@ const path = require("path");
 const NodemonPlugin = require("nodemon-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
-const clientConfig = {
+const config = {
   output: {
     path: path.resolve("./dist"),
     filename: "bundle.js",
@@ -38,4 +38,4 @@ const clientConfig = {
   },
 };
 
-module.exports = clientConfig;
+module.exports = config;

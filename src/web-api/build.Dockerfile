@@ -1,3 +1,4 @@
 FROM node:14
-WORKDIR /web-api
-CMD npm ci --no-optional && npm run build
+# COPY tsconfig.base.json .
+WORKDIR /src/web-api
+CMD npm run build

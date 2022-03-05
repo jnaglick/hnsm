@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "build": "npm run clean && npm run pack",
-    "build:in-container": "docker-compose run --rm web-api-build",
-    "clean": "rm -rf dist/",
-    "pack": "webpack ./src/index.lambda.ts --mode production",
+    "build": "webpack ./src/index.lambda.ts --mode production",
+    "clean": "rm -rf node_modules/ && rm -rf dist/",
+    "install:ci": "npm ci --no-optional",
     "start:dev": "webpack ./src/index.local-lambda-emulator.ts --watch --mode development",
     "test": "jest --config=../../jest.config.js --verbose --rootDir=."
   },

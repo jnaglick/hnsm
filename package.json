@@ -5,16 +5,16 @@
   "scripts": {
     "bootstrap": "npm install && lerna bootstrap",
     "build": "lerna run build --parallel",
-    "build:in-container": "lerna run build:in-container --parallel",
-    "clean": "lerna run clean",
-    "clean:node_modules": "rimraf **/node_modules",
+    "build:container": "docker-compose run --rm builder",
+    "clean": "rimraf **/dist && rimraf **/node_modules",
+    "install:ci": "npm ci --no-optional && lerna run install:ci --parallel",
     "lint": "prettier . && eslint .",
     "lint:write": "prettier --write . && eslint --fix .",
     "start:dev": "lerna run start:dev --parallel",
     "test": "jest --config=./jest.config.js --verbose"
   },
   "author": "",
-  "license": "NONE",
+  "license": "UNLICENSED",
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "27.0.3",

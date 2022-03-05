@@ -7,7 +7,7 @@
     "cdk:deploy:web-api": "cdk deploy WebApiStack --profile=hnsm",
     "cdk:deploy:web-client": "cdk deploy WebClientStack --profile=hnsm",
     "cdk:diff": "cdk diff --profile=hnsm",
-    "clean": "rm -rf cdk.out/",
+    "clean": "rm -rf node_modules/ && rm -rf cdk.out/",
     "test": "jest --config=../../jest.config.js --verbose --rootDir=."
   },
   "author": "",

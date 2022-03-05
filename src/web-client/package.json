@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "build": "npm run clean && npm run pack",
-    "build:in-container": "docker-compose run --rm web-client-build",
-    "clean": "rm -rf dist/",
-    "pack": "webpack --mode production",
+    "build": "webpack --mode production",
+    "clean": "rm -rf node_modules/ && rm -rf dist/",
+    "install:ci": "npm ci --no-optional",
     "start:dev": "webpack serve --live-reload --mode development",
-    "test": "jest"
+    "test": "jest --config=../../jest.config.js --verbose --rootDir=."
   },
   "author": "",
   "license": "NONE",

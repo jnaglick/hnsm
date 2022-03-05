@@ -9,7 +9,7 @@
     "jsxFactory": "h" /* @jsx h */,
     "allowSyntheticDefaultImports": true,
     
-    "baseUrl": "../.." /* to make TsconfigPathsPlugin not error 🙄 */,
+    "baseUrl": "../.." /* required by TsconfigPathsPlugin */,
   },
 
   "exclude": ["node_modules", "dist", "**/*.spec.ts"]

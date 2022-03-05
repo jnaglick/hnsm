@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
-const clientConfig = {
+const config = {
   entry: "./src/index.tsx",
 
   output: {
@@ -52,4 +52,4 @@ const clientConfig = {
   },
 };
 
-module.exports = clientConfig;
+module.exports = config;
