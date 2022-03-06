@@ -1,9 +1,0 @@
-version: "3.9"
-services:
-  web-api-build:
-    build:
-      context: .
-      dockerfile: build.Dockerfile
-    image: web-api-build
-    volumes:
-      - ./:/web-api

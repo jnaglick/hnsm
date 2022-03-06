@@ -1,5 +1,9 @@
+import { getEnvironment } from "$common/environment";
+
 import { App } from "./app";
 
+const env = getEnvironment();
+
 new App({
-  STAGE: "prod",
+  STAGE: env.STAGE,
 });

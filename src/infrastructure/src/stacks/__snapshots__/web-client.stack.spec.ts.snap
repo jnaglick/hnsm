@@ -3,18 +3,6 @@
 exports[`WebClientStack should match snapshot 1`] = `
 Object {
   "Parameters": Object {
-    "AssetParameters1e9eab5f69bb4ff32741ae549ae892ee0f2bece9179c9278a320774a82c5ed39ArtifactHash070EA13F": Object {
-      "Description": "Artifact hash for asset \\"1e9eab5f69bb4ff32741ae549ae892ee0f2bece9179c9278a320774a82c5ed39\\"",
-      "Type": "String",
-    },
-    "AssetParameters1e9eab5f69bb4ff32741ae549ae892ee0f2bece9179c9278a320774a82c5ed39S3Bucket4C773762": Object {
-      "Description": "S3 bucket for asset \\"1e9eab5f69bb4ff32741ae549ae892ee0f2bece9179c9278a320774a82c5ed39\\"",
-      "Type": "String",
-    },
-    "AssetParameters1e9eab5f69bb4ff32741ae549ae892ee0f2bece9179c9278a320774a82c5ed39S3VersionKeyBE563A54": Object {
-      "Description": "S3 key for asset version \\"1e9eab5f69bb4ff32741ae549ae892ee0f2bece9179c9278a320774a82c5ed39\\"",
-      "Type": "String",
-    },
     "AssetParametersa3058ccb468d757ebb89df5363a1c20f5307c6911136f29d00e1a68c9b2aa7e8ArtifactHash238275D6": Object {
       "Description": "Artifact hash for asset \\"a3058ccb468d757ebb89df5363a1c20f5307c6911136f29d00e1a68c9b2aa7e8\\"",
       "Type": "String",
@@ -25,6 +13,18 @@ Object {
     },
     "AssetParametersa3058ccb468d757ebb89df5363a1c20f5307c6911136f29d00e1a68c9b2aa7e8S3VersionKey93A19D70": Object {
       "Description": "S3 key for asset version \\"a3058ccb468d757ebb89df5363a1c20f5307c6911136f29d00e1a68c9b2aa7e8\\"",
+      "Type": "String",
+    },
+    "AssetParameterse0659dd0cbb56ddc630c08444b84fb9f6d0054ce236e59b76340c02f447ecc80ArtifactHash8487259F": Object {
+      "Description": "Artifact hash for asset \\"e0659dd0cbb56ddc630c08444b84fb9f6d0054ce236e59b76340c02f447ecc80\\"",
+      "Type": "String",
+    },
+    "AssetParameterse0659dd0cbb56ddc630c08444b84fb9f6d0054ce236e59b76340c02f447ecc80S3Bucket3DEE379E": Object {
+      "Description": "S3 bucket for asset \\"e0659dd0cbb56ddc630c08444b84fb9f6d0054ce236e59b76340c02f447ecc80\\"",
+      "Type": "String",
+    },
+    "AssetParameterse0659dd0cbb56ddc630c08444b84fb9f6d0054ce236e59b76340c02f447ecc80S3VersionKey7870C312": Object {
+      "Description": "S3 key for asset version \\"e0659dd0cbb56ddc630c08444b84fb9f6d0054ce236e59b76340c02f447ecc80\\"",
       "Type": "String",
     },
     "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68ArtifactHashD9A515C3": Object {
@@ -41,14 +41,6 @@ Object {
     },
   },
   "Resources": Object {
-    "Bucket83908E77": Object {
-      "DeletionPolicy": "Retain",
-      "Properties": Object {
-        "AccessControl": "Private",
-      },
-      "Type": "AWS::S3::Bucket",
-      "UpdateReplacePolicy": "Retain",
-    },
     "BucketDeploymentAwsCliLayerB018DCE1": Object {
       "Properties": Object {
         "Content": Object {
@@ -97,7 +89,7 @@ Object {
       "DeletionPolicy": "Delete",
       "Properties": Object {
         "DestinationBucketName": Object {
-          "Ref": "Bucket83908E77",
+          "Ref": "WebClientBucketC2A4CF03",
         },
         "Prune": true,
         "ServiceToken": Object {
@@ -108,7 +100,7 @@ Object {
         },
         "SourceBucketNames": Array [
           Object {
-            "Ref": "AssetParameters1e9eab5f69bb4ff32741ae549ae892ee0f2bece9179c9278a320774a82c5ed39S3Bucket4C773762",
+            "Ref": "AssetParameterse0659dd0cbb56ddc630c08444b84fb9f6d0054ce236e59b76340c02f447ecc80S3Bucket3DEE379E",
           },
         ],
         "SourceObjectKeys": Array [
@@ -123,7 +115,7 @@ Object {
                       "Fn::Split": Array [
                         "||",
                         Object {
-                          "Ref": "AssetParameters1e9eab5f69bb4ff32741ae549ae892ee0f2bece9179c9278a320774a82c5ed39S3VersionKeyBE563A54",
+                          "Ref": "AssetParameterse0659dd0cbb56ddc630c08444b84fb9f6d0054ce236e59b76340c02f447ecc80S3VersionKey7870C312",
                         },
                       ],
                     },
@@ -136,7 +128,7 @@ Object {
                       "Fn::Split": Array [
                         "||",
                         Object {
-                          "Ref": "AssetParameters1e9eab5f69bb4ff32741ae549ae892ee0f2bece9179c9278a320774a82c5ed39S3VersionKeyBE563A54",
+                          "Ref": "AssetParameterse0659dd0cbb56ddc630c08444b84fb9f6d0054ce236e59b76340c02f447ecc80S3VersionKey7870C312",
                         },
                       ],
                     },
@@ -264,7 +256,7 @@ Object {
                       },
                       ":s3:::",
                       Object {
-                        "Ref": "AssetParameters1e9eab5f69bb4ff32741ae549ae892ee0f2bece9179c9278a320774a82c5ed39S3Bucket4C773762",
+                        "Ref": "AssetParameterse0659dd0cbb56ddc630c08444b84fb9f6d0054ce236e59b76340c02f447ecc80S3Bucket3DEE379E",
                       },
                     ],
                   ],
@@ -279,7 +271,7 @@ Object {
                       },
                       ":s3:::",
                       Object {
-                        "Ref": "AssetParameters1e9eab5f69bb4ff32741ae549ae892ee0f2bece9179c9278a320774a82c5ed39S3Bucket4C773762",
+                        "Ref": "AssetParameterse0659dd0cbb56ddc630c08444b84fb9f6d0054ce236e59b76340c02f447ecc80S3Bucket3DEE379E",
                       },
                       "/*",
                     ],
@@ -300,7 +292,7 @@ Object {
               "Resource": Array [
                 Object {
                   "Fn::GetAtt": Array [
-                    "Bucket83908E77",
+                    "WebClientBucketC2A4CF03",
                     "Arn",
                   ],
                 },
@@ -310,7 +302,7 @@ Object {
                     Array [
                       Object {
                         "Fn::GetAtt": Array [
-                          "Bucket83908E77",
+                          "WebClientBucketC2A4CF03",
                           "Arn",
                         ],
                       },
@@ -331,6 +323,114 @@ Object {
         ],
       },
       "Type": "AWS::IAM::Policy",
+    },
+    "OriginAccessIdentityDF1E3CAC": Object {
+      "Properties": Object {
+        "CloudFrontOriginAccessIdentityConfig": Object {
+          "Comment": "Allows CloudFront to reach the bucket",
+        },
+      },
+      "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+    },
+    "WebClientBucketC2A4CF03": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "AccessControl": "Private",
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "WebClientBucketPolicyB99ED3AC": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "WebClientBucketC2A4CF03",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+              ],
+              "Effect": "Allow",
+              "Principal": Object {
+                "CanonicalUser": Object {
+                  "Fn::GetAtt": Array [
+                    "OriginAccessIdentityDF1E3CAC",
+                    "S3CanonicalUserId",
+                  ],
+                },
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "WebClientBucketC2A4CF03",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "WebClientBucketC2A4CF03",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+    "WebClientDistribution282DC30F": Object {
+      "Properties": Object {
+        "DistributionConfig": Object {
+          "DefaultCacheBehavior": Object {
+            "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+            "Compress": true,
+            "TargetOriginId": "WebClientStackWebClientDistributionOrigin1064A2D61",
+            "ViewerProtocolPolicy": "allow-all",
+          },
+          "DefaultRootObject": "index.html",
+          "Enabled": true,
+          "HttpVersion": "http2",
+          "IPV6Enabled": true,
+          "Origins": Array [
+            Object {
+              "DomainName": Object {
+                "Fn::GetAtt": Array [
+                  "WebClientBucketC2A4CF03",
+                  "RegionalDomainName",
+                ],
+              },
+              "Id": "WebClientStackWebClientDistributionOrigin1064A2D61",
+              "S3OriginConfig": Object {
+                "OriginAccessIdentity": Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "origin-access-identity/cloudfront/",
+                      Object {
+                        "Ref": "OriginAccessIdentityDF1E3CAC",
+                      },
+                    ],
+                  ],
+                },
+              },
+            },
+          ],
+        },
+      },
+      "Type": "AWS::CloudFront::Distribution",
     },
   },
 }

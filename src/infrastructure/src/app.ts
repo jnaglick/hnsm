@@ -1,19 +1,31 @@
 import * as cdk from "@aws-cdk/core";
 
+import { DeploymentStage } from "$common/";
 import { WebApiStack, WebClientStack } from "./stacks";
 
 export interface AppContext {
-  STAGE: string;
+  STAGE: DeploymentStage;
 }
 
 export class App extends cdk.App {
+  public readonly stacks: cdk.Stack[] = [];
+
   constructor(context: AppContext) {
     super({
       context,
     });
 
-    new WebApiStack(this, "WebApiStack");
-    new WebClientStack(this, "WebClientStack");
+    // const stackProps: cdk.StackProps = {};
+
+    // TODO env
+
+    this.addStack(new WebApiStack(this, "WebApiStack"));
+
+    this.addStack(new WebClientStack(this, "WebClientStack"));
+  }
+
+  private addStack(stack: cdk.Stack) {
+    this.stacks.push(stack);
   }
 }
 

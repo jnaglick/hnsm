@@ -1,15 +1,19 @@
 import { ALBEvent, ALBResult, Context } from "aws-lambda";
 
+import { getEnvironment } from "$common/environment";
+
+const env = getEnvironment();
+
 export type LambdaProxyHandlerFunction = (
   event: ALBEvent,
   context?: Context
 ) => Promise<ALBResult>;
 
 export class Application {
-  public handler: LambdaProxyHandlerFunction = async (
+  public async handler(
     event: ALBEvent,
     context?: Context
-  ): Promise<ALBResult> => {
+  ) {
     if (this.handlers[event.path]) {
       return this.handlers[event.path](event, context);
     }
@@ -38,7 +42,9 @@ export class Application {
     ): Promise<ALBResult> => {
       console.log("event", event);
       console.log("context", context);
-
+      console.log("env", env);
+      
+      // "The Application"
       this.state.counter += 1;
 
       return new ALBResultBuilder().statusCode(200).body(this.state).build();
@@ -46,8 +52,7 @@ export class Application {
   }
 }
 
-// fun pattern but this probably aint necessary
-
+// move me
 class Builder<T> {
   protected state: T;
 

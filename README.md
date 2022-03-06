@@ -5,21 +5,25 @@
 
 Prereqs:
 
-1. use nvm or the node thats in .nvmrc
+1. Use nvm or the node thats in .nvmrc
 
-To setup:
+2. Create .env.local from example and fill it out:
+
+```
+cp .env.local.example .env.local
+```
+
+3. Install deps in all packages:
 
 ```
 npm run bootstrap
 ```
 
-To start in local dev mode:
+4. Finally, start all services in local dev mode:
 
 ```
 npm run start:dev
 ```
-
-NOTE: There's a know issue with this command where you can't see output from the scripts. Navigate to localhost:8080 or localhost:9000 ...
 
 ## Deployment
 
@@ -45,14 +49,9 @@ This will be automated and improved eventually!
 
 ## Issues
 
-- shared deps (typescript, jest) are duplicated across every package, shouldn't they be shared? ((am i use lerna wrong?))
-- lerna doesnt bind tty, so when running the top-level scripts that use `lerna run ...`, you cant see server output or do shell interaction with the inner npm scripts, which is really painful and makes cdk deploys requiring shell interaction impossible...
 - inf specs fail if no dist/ on local fs. need way to inject/mock this
-- inf spec snapshot is _always_ different for web-client, and (expectedly) different when web-api dist changes. same as above, need way to inject/mock this
-- need something that unifies build+deploy steps
+- inf spec snapshot changes when code changes. same as above, need way to inject/mock this
 
 ## TODO
 
-- use tsconfig-paths (specifically in inf package because it doesnt use webpack)
-- better use of extends in tsconfig. web-client one is mostly a copy+paste of base one
-- unify how dependencies vs devDependencies are listed. (ofc this is just a formality because all deployed code is bundled, and ci/cd needs to build and test...)
+- cant use lerna hoist because some package (i forget which) doesnt respect node_modules recursive lookup (wont fix?)

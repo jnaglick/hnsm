@@ -1,17 +1,21 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
+import * as path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
-const clientConfig = {
+export const WEB_CLIENT_DIST_PATH = path.resolve(__dirname, "./dist");
+
+const config = {
   entry: "./src/index.tsx",
 
   output: {
-    path: path.resolve("./dist"),
+    path: WEB_CLIENT_DIST_PATH,
     filename: "bundle.js",
   },
 
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
     modules: [path.resolve("./node_modules"), path.resolve("./src")],
+    plugins: [new TsconfigPathsPlugin()],
   },
 
   module: {
@@ -50,4 +54,4 @@ const clientConfig = {
   },
 };
 
-module.exports = clientConfig;
+module.exports = config;

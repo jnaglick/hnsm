@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  builder:
+    build:
+      context: .
+      dockerfile: builder.Dockerfile
+    image: hnsm/builder
+    volumes:
+      - ./dist/web-api/:/app/src/web-api/dist
+      - ./dist/web-client/:/app/src/web-client/dist
