@@ -1,5 +1,9 @@
 import { ALBEvent, ALBResult, Context } from "aws-lambda";
 
+import { getEnvironment } from "$common/environment";
+
+const env = getEnvironment();
+
 export type LambdaProxyHandlerFunction = (
   event: ALBEvent,
   context?: Context
@@ -38,6 +42,7 @@ export class Application {
     ): Promise<ALBResult> => {
       console.log("event", event);
       console.log("context", context);
+      console.log("env", env);
 
       this.state.counter += 1;
 
@@ -46,8 +51,7 @@ export class Application {
   }
 }
 
-// fun pattern but this probably aint necessary
-
+// move me
 class Builder<T> {
   protected state: T;
 

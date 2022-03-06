@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "$common/*": ["./src/common/src"],
+      "$inf/*": ["./src/infrastructure/src"],
+      "$web-api/*": ["./src/web-api/src"],
+      "$web-client/*": ["./src/web-client/src"]
+    },
+
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  }
+}

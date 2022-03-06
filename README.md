@@ -13,7 +13,7 @@ Prereqs:
 cp .env.local.example .env.local
 ```
 
-3. Install deps:
+3. Install deps in all packages:
 
 ```
 npm run bootstrap
@@ -55,6 +55,4 @@ This will be automated and improved eventually!
 
 ## TODO
 
-- use tsconfig-paths (specifically in inf package because it doesnt use webpack)
-- better use of extends in tsconfig. web-client one is mostly a copy+paste of base one
 - cant use lerna hoist because some package (i forget which) doesnt respect node_modules recursive lookup (wont fix?)

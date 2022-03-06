@@ -3,51 +3,63 @@ import * as path from "path";
 
 const ENV_LOCAL_PATH = path.resolve(__dirname, "../../../.env.local");
 
-export interface Environment {
-  STAGE: "prod" | "dev";
+enum Stages {
+  "dev",
+  "preprod",
+  "prod",
+}
+
+enum Regions {
+  "us-east-1",
+  "us-west-1",
+}
+
+export interface ENV {
+  STAGE: Stages;
+  REGION: Regions;
 }
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-function isEnvironment(env: any): env is Environment {
+function isEnvironment(env: any): env is ENV {
   if (typeof env !== "object") {
     return false;
   }
 
-  if (!["prod", "dev"].includes(env.STAGE)) {
+  if (!["dev", "preprod", "prod"].includes(env.STAGE)) {
     return false;
   }
+
+  if (!["us-east-1", "us-west-2"].includes(env.REGION)) {
+    return false;
+  }
+
 
   return true;
 }
 
-function loadEnv(): Environment {
+function loadEnv(): ENV {
   const dotenvConfig = dotenv.config({
     path: ENV_LOCAL_PATH,
   });
 
   if (dotenvConfig.error) {
-    // console.error(dotenvConfig.error);
     throw dotenvConfig.error;
   }
 
   const env = dotenvConfig.parsed;
 
   if (!env) {
-    // console.error('Failed to load env: empty');
     throw "Failed to load env: empty";
   }
 
   if (!isEnvironment(env)) {
-    // console.error('Failed to load env: typeguard returned false');
     throw "Failed to load env: typeguard returned false";
   }
 
-  return {
-    STAGE: env.STAGE,
-  };
+  return env;
 }
 
-let env: Environment | void;
-export function getEnvironment(): Environment {
+let env: ENV | void;
+export function getEnvironment(): ENV {
   return env ? env : (env = loadEnv());
 }

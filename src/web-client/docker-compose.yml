@@ -1,9 +1,0 @@
-version: "3.9"
-services:
-  web-client-build:
-    build:
-      context: .
-      dockerfile: build.Dockerfile
-    image: web-client-build
-    volumes:
-      - ./:/web-client
