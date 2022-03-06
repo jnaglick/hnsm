@@ -1,9 +1,10 @@
 import * as cdk from "@aws-cdk/core";
 
+import { DeploymentStage } from "$common/";
 import { WebApiStack, WebClientStack } from "./stacks";
 
 export interface AppContext {
-  STAGE: string;
+  STAGE: DeploymentStage;
 }
 
 export class App extends cdk.App {
@@ -13,6 +14,10 @@ export class App extends cdk.App {
     super({
       context,
     });
+
+    // const stackProps: cdk.StackProps = {};
+
+    // TODO env
 
     this.addStack(new WebApiStack(this, "WebApiStack"));
 

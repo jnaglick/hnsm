@@ -7,10 +7,15 @@
     
     "jsx": "react",
     "jsxFactory": "h" /* @jsx h */,
-    "allowSyntheticDefaultImports": true,
-    
-    "baseUrl": "../.." /* required by TsconfigPathsPlugin */,
+    "allowSyntheticDefaultImports": true
   },
 
-  "exclude": ["node_modules", "dist", "**/*.spec.ts"]
+  "exclude": ["node_modules", "dist", "**/*.spec.ts"],
+
+    // for webpack:
+    "ts-node": {
+      "compilerOptions": {
+        "module": "CommonJS"
+      }
+    }
 }

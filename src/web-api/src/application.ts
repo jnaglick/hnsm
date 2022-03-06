@@ -10,10 +10,10 @@ export type LambdaProxyHandlerFunction = (
 ) => Promise<ALBResult>;
 
 export class Application {
-  public handler: LambdaProxyHandlerFunction = async (
+  public async handler(
     event: ALBEvent,
     context?: Context
-  ): Promise<ALBResult> => {
+  ) {
     if (this.handlers[event.path]) {
       return this.handlers[event.path](event, context);
     }
@@ -43,7 +43,8 @@ export class Application {
       console.log("event", event);
       console.log("context", context);
       console.log("env", env);
-
+      
+      // "The Application"
       this.state.counter += 1;
 
       return new ALBResultBuilder().statusCode(200).body(this.state).build();

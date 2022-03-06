@@ -51,7 +51,6 @@ This will be automated and improved eventually!
 
 - inf specs fail if no dist/ on local fs. need way to inject/mock this
 - inf spec snapshot changes when code changes. same as above, need way to inject/mock this
-- need something that unifies build+deploy steps
 
 ## TODO
 

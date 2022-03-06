@@ -1,10 +1,12 @@
-const path = require("path");
-const NodemonPlugin = require("nodemon-webpack-plugin");
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+import * as path from 'path';
+import NodemonPlugin from 'nodemon-webpack-plugin';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+
+export const WEB_API_DIST_PATH = path.resolve(__dirname, "./dist");
 
 const config = {
   output: {
-    path: path.resolve("./dist"),
+    path: WEB_API_DIST_PATH,
     filename: "bundle.js",
     libraryTarget: "commonjs",
   },
@@ -38,4 +40,4 @@ const config = {
   },
 };
 
-module.exports = config;
+export default config;

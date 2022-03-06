@@ -1,6 +1,6 @@
-import { App } from "./app";
-
 import { getEnvironment } from "$common/environment";
+
+import { App } from "./app";
 
 const env = getEnvironment();
 

@@ -1,13 +1,10 @@
 import * as apiGateway from "@aws-cdk/aws-apigateway";
 import * as cdk from "@aws-cdk/core";
 import * as lambda from "@aws-cdk/aws-lambda";
-import * as path from "path";
 
-// TODO tsconfig-paths with cdk
 import { getStage } from "../app";
 
-// TODO better solution
-const WEB_API_DIST = path.resolve(__dirname, "../../../web-api/dist");
+import { WEB_API_DIST_PATH } from "../../../web-api/webpack.config";
 
 export class WebApiStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string) {
@@ -18,7 +15,7 @@ export class WebApiStack extends cdk.Stack {
     const handler = new lambda.Function(this, "Lambda", {
       runtime: lambda.Runtime.NODEJS_12_X,
       handler: "bundle.handler",
-      code: lambda.Code.fromAsset(WEB_API_DIST),
+      code: lambda.Code.fromAsset(WEB_API_DIST_PATH),
     });
 
     const integration = new apiGateway.LambdaIntegration(handler, {

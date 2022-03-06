@@ -5,7 +5,6 @@ import * as cloudfrontOrigins from "@aws-cdk/aws-cloudfront-origins";
 import * as s3 from "@aws-cdk/aws-s3";
 import * as s3Deployment from "@aws-cdk/aws-s3-deployment";
 
-// TODO tsconfig-paths with cdk
 import { getStage } from "../app";
 
 // TODO better solution
